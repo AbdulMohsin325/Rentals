@@ -1,5 +1,7 @@
 import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
+// importing Admin model to fetch admin data in protect middleware
+import Admin from '../models/Admin.js';
 
 // Protect routes
 export const protect = async (req, res, next) => {

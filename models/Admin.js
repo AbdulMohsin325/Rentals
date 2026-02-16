@@ -28,23 +28,23 @@ const adminSchema = new mongoose.Schema(
             required: [true, 'Please provide a password'],
             minlength: [6, 'Password must be at least 6 characters'],
             select: false
-        },
-        age: {
-            type: Number,
-            min: [0, 'Age cannot be negative'],
-            max: [120, 'Age cannot be more than 120']
-        },
-        phone: {
-            type: String,
-            trim: true
-        },
-        address: {
-            street: String,
-            city: String,
-            state: String,
-            zipCode: String,
-            country: String
-        },
+     },
+        // age: {
+        //     type: Number,
+        //     min: [0, 'Age cannot be negative'],
+        //     max: [120, 'Age cannot be more than 120']
+        // },
+        // phone: {
+        //     type: String,
+        //     trim: true
+        // },
+        // address: {
+        //     street: String,
+        //     city: String,
+        //     state: String,
+        //     zipCode: String,
+        //     country: String
+        // },
         isActive: {
             type: Boolean,
             default: true
