@@ -1,4 +1,4 @@
-// For Admin Added [name, email, pass]]
+// Added by me 
 
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
@@ -29,22 +29,22 @@ const adminSchema = new mongoose.Schema(
             minlength: [6, 'Password must be at least 6 characters'],
             select: false
         },
-        // age: {
-        //     type: Number,
-        //     min: [0, 'Age cannot be negative'],
-        //     max: [120, 'Age cannot be more than 120']
-        // },
-        // phone: {
-        //     type: String,
-        //     trim: true
-        // },
-        // address: {
-        //     street: String,
-        //     city: String,
-        //     state: String,
-        //     zipCode: String,
-        //     country: String
-        // },
+        age: {
+            type: Number,
+            min: [0, 'Age cannot be negative'],
+            max: [120, 'Age cannot be more than 120']
+        },
+        phone: {
+            type: String,
+            trim: true
+        },
+        address: {
+            street: String,
+            city: String,
+            state: String,
+            zipCode: String,
+            country: String
+        },
         isActive: {
             type: Boolean,
             default: true
@@ -72,7 +72,7 @@ adminSchema.methods.getSignedJwtToken = function () {
     });
 };
 
-// Match admin entered password to hashed password in database
+// Match user entered password to hashed password in database
 adminSchema.methods.matchPassword = async function (enteredPassword) {
     return await bcrypt.compare(enteredPassword, this.password);
 };
